@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TukuAcademic - Plataforma de Simulacros</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #f8fbff 0%, #f0fdfa 100%);
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0d9488 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 40px;
+        }
+        header h1 { font-size: 42px; margin-bottom: 12px; letter-spacing: -1px; }
+        header p { font-size: 18px; opacity: 0.95; }
+        header .logo { font-size: 60px; margin-bottom: 16px; }
+
+        /* SECCIÓN */
+        h2 {
+            font-size: 28px;
+            color: #1e3a8a;
+            margin: 40px 0 20px 0;
+            font-weight: 800;
+        }
+
+        /* PLANES */
+        .plan {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 16px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            transition: all 0.2s;
+        }
+        .plan:hover {
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+            transform: translateY(-2px);
+        }
+        .plan-info { flex: 1; }
+        .plan h3 { font-size: 22px; color: #0d9488; margin-bottom: 8px; }
+        .plan p { color: #475569; font-size: 15px; }
+        .plan-compra { text-align: center; min-width: 140px; }
+        .plan-precio {
+            font-size: 34px;
+            font-weight: 800;
+            color: #0d9488;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .plan-precio small { font-size: 14px; color: #666; font-weight: 400; display: block; }
+        .boton {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        .boton:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        /* INFO TIENDA */
+        .info-tienda {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            margin: 40px 0;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+        }
+        .info-tienda h3 { color: #1e3a8a; margin-bottom: 16px; font-size: 20px; }
+        .info-tienda p { margin: 8px 0; font-size: 15px; }
+        .info-tienda strong { color: #0d9488; }
+
+        /* LEGAL */
+        .legal {
+            background: #f8fafc;
+            border-left: 4px solid #0d9488;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 40px 0;
+            font-size: 14px;
+            color: #475569;
+        }
+        .legal h3 { color: #1e3a8a; margin-bottom: 12px; font-size: 18px; }
+        .legal p { margin: 8px 0; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+            font-size: 13px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 { font-size: 28px; }
+            header p { font-size: 15px; }
+            .plan { flex-direction: column; text-align: center; }
+            .plan-compra { width: 100%; }
+            h2 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎓</div>
+        <h1>TukuAcademic</h1>
+        <p>Plataforma de simulacros para exámenes de salud y profesionales</p>
+    </header>
+
+    <div class="container">
+
+        <h2>📚 Nuestros Planes de Preparación</h2>
+        <p style="margin-bottom: 24px; color: #475569;">
+            Elige el plan que mejor se adapte a tu preparación. Todos los planes incluyen acceso a nuestro banco de +3,000 preguntas con explicaciones detalladas.
+        </p>
+
+        <div class="plan">
+            <div class="plan-info">
+                <h3>🎟️ Ticket Simulacro</h3>
+                <p>3 simulacros completos evaluados en cualquier preparación de tu carrera. Ideal para probar la plataforma o medirte antes del examen.</p>
+            </div>
+            <div class="plan-compra">
+                <div class="plan-precio">S/ 5 <small>pago único</small></div>
+                <a href="https://tukuacademic.streamlit.app" class="boton">Comprar</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <div class="plan-info">
+                <h3>⚡ Pase Rápido</h3>
+                <p>7 días de acceso ilimitado a todo el contenido de tu carrera. Perfecto si tu examen es esta semana y necesitas repasar rápido.</p>
+            </div>
+            <div class="plan-compra">
+                <div class="plan-precio">S/ 50 <small>7 días</small></div>
+                <a href="https://tukuacademic.streamlit.app" class="boton">Comprar</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <div class="plan-info">
+                <h3>💪 Pase Intensivo</h3>
+                <p>30 días de acceso ilimitado. Preparación seria y completa para los que quieren dar todo antes del examen.</p>
+            </div>
+            <div class="plan-compra">
+                <div class="plan-precio">S/ 25 <small>30 días</small></div>
+                <a href="https://tukuacademic.streamlit.app" class="boton">Comprar</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <div class="plan-info">
+                <h3>👑 Pase Élite</h3>
+                <p>Acceso ilimitado hasta el día de tu examen real. Sin preocupaciones, sin fechas. El más recomendado por nuestros estudiantes.</p>
+            </div>
+            <div class="plan-compra">
+                <div class="plan-precio">S/ 80 <small>hasta tu examen</small></div>
+                <a href="https://tukuacademic.streamlit.app" class="boton">Comprar</a>
+            </div>
+        </div>
+
+        <div class="info-tienda">
+            <h3>📋 Información de la Tienda</h3>
+            <p><strong>Nombre comercial:</strong> TukuAcademic</p>
+            <p><strong>Razón social:</strong> SIMON APOLINARIO, FRANK LEONARDO</p>
+            <p><strong>RUC:</strong> 10726934351</p>
+            <p><strong>Domicilio fiscal:</strong> JR. DARIO LEON 330 URB.LA OROYA ANTIGUA, Perú</p>
+            <p><strong>Correo de contacto:</strong> tukuacademic@gmail.com</p>
+            <p><strong>Teléfono / WhatsApp:</strong> 932480313</p>
+            <p><strong>Horario de atención:</strong> Lunes a domingo, 8:00 am - 10:00 pm</p>
+        </div>
+
+        <div class="legal">
+            <h3>⚖️ Términos y Condiciones</h3>
+            <p><strong>1. Aceptación:</strong> Al adquirir cualquier plan de TukuAcademic, el usuario acepta los presentes términos y condiciones.</p>
+            <p><strong>2. Naturaleza del servicio:</strong> TukuAcademic es una plataforma digital de simulacros y preparación para exámenes nacionales y profesionales. El acceso es personal e intransferible.</p>
+            <p><strong>3. Pagos:</strong> Los pagos se procesan mediante pasarelas de pago autorizadas (Yape, Plin, tarjetas). Los precios están expresados en soles peruanos (S/) e incluyen IGV cuando corresponda.</p>
+            <p><strong>4. Política de reembolsos:</strong> No se realizan reembolsos después de activar el plan. Si tienes problemas con tu compra, contáctanos dentro de las primeras 24 horas.</p>
+            <p><strong>5. Uso del contenido:</strong> Todo el contenido de la plataforma (preguntas, explicaciones, material de estudio) es propiedad de TukuAcademic y está protegido por derechos de autor. Queda prohibida su reproducción o reventa.</p>
+            <p><strong>6. Protección de datos:</strong> Los datos personales de los usuarios son tratados con confidencialidad y no son compartidos con terceros sin autorización.</p>
+            <p><strong>7. Modificaciones:</strong> TukuAcademic se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados a través de la plataforma.</p>
+            <p><strong>8. Contacto:</strong> Para cualquier consulta, escríbenos a [TU CORREO] o al WhatsApp [TU NÚMERO].</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 TukuAcademic · Todos los derechos reservados</p>
+        <p>Plataforma de simulacros para exámenes profesionales en Perú</p>
+    </footer>
+
+</body>
+</html>
