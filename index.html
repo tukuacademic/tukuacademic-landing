@@ -14,7 +14,6 @@
         }
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
-        /* HEADER */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0d9488 100%);
             color: white;
@@ -27,7 +26,26 @@
         header p { font-size: 18px; opacity: 0.95; }
         header .logo { font-size: 60px; margin-bottom: 16px; }
 
-        /* SECCIÓN */
+        nav.top-nav {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            text-align: center;
+            margin-top: 24px;
+            border-radius: 12px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        nav.top-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        nav.top-nav a:hover { opacity: 1; text-decoration: underline; }
+
         h2 {
             font-size: 28px;
             color: #1e3a8a;
@@ -35,7 +53,6 @@
             font-weight: 800;
         }
 
-        /* PLANES */
         .plan {
             background: white;
             border: 1px solid #e2e8f0;
@@ -79,9 +96,19 @@
             transition: all 0.2s;
         }
         .boton:hover { opacity: 0.9; transform: translateY(-1px); }
+        .badge-nuevo {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
 
-        /* INFO TIENDA */
-        .info-tienda {
+        .info-tienda, .legal, .libro-reclamaciones {
             background: white;
             border-radius: 16px;
             padding: 28px;
@@ -89,24 +116,69 @@
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
         }
-        .info-tienda h3 { color: #1e3a8a; margin-bottom: 16px; font-size: 20px; }
+        .info-tienda h3, .legal h3, .libro-reclamaciones h3 { color: #1e3a8a; margin-bottom: 16px; font-size: 22px; }
         .info-tienda p { margin: 8px 0; font-size: 15px; }
         .info-tienda strong { color: #0d9488; }
 
-        /* LEGAL */
         .legal {
             background: #f8fafc;
             border-left: 4px solid #0d9488;
-            padding: 24px;
-            border-radius: 12px;
-            margin: 40px 0;
-            font-size: 14px;
-            color: #475569;
         }
-        .legal h3 { color: #1e3a8a; margin-bottom: 12px; font-size: 18px; }
-        .legal p { margin: 8px 0; }
+        .legal p { margin: 10px 0; font-size: 14px; color: #475569; }
 
-        /* FOOTER */
+        .libro-reclamaciones {
+            border-left: 4px solid #dc2626;
+        }
+        .libro-reclamaciones .sub { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 14px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1e293b;
+            font-size: 14px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+
+        .redes-sociales {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin: 40px 0 20px 0;
+            flex-wrap: wrap;
+        }
+        .redes-sociales a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+            transition: all 0.2s;
+        }
+        .redes-sociales a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+        }
+        .redes-sociales a.ig { color: #e1306c; }
+        .redes-sociales a.fb { color: #1877f2; }
+        .redes-sociales a.tt { color: #000; }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -116,13 +188,13 @@
             margin-top: 40px;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             header h1 { font-size: 28px; }
             header p { font-size: 15px; }
             .plan { flex-direction: column; text-align: center; }
             .plan-compra { width: 100%; }
             h2 { font-size: 22px; }
+            nav.top-nav a { display: block; margin: 6px 0; }
         }
     </style>
 </head>
@@ -132,11 +204,19 @@
         <div class="logo">🎓</div>
         <h1>TukuAcademic</h1>
         <p>Plataforma de simulacros para exámenes de salud y profesionales</p>
+
+        <nav class="top-nav">
+            <a href="#planes">Planes</a>
+            <a href="#devoluciones">Cambios y Devoluciones</a>
+            <a href="#libro">Libro de Reclamaciones</a>
+            <a href="#legal">Términos y Condiciones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
     <div class="container">
 
-        <h2>📚 Nuestros Planes de Preparación</h2>
+        <h2 id="planes">📚 Nuestros Planes de Preparación</h2>
         <p style="margin-bottom: 24px; color: #475569;">
             Elige el plan que mejor se adapte a tu preparación. Todos los planes incluyen acceso a nuestro banco de +3,000 preguntas con explicaciones detalladas.
         </p>
@@ -148,6 +228,17 @@
             </div>
             <div class="plan-compra">
                 <div class="plan-precio">S/ 5 <small>pago único</small></div>
+                <a href="https://tukuacademic.streamlit.app" class="boton">Comprar</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <div class="plan-info">
+                <h3>🎟️ Pack x2 Tickets <span class="badge-nuevo">NUEVO</span></h3>
+                <p>6 simulacros completos (2 tickets). Ideal para los que quieren medirse varias veces. Ahorras S/ 1 frente a comprar por separado.</p>
+            </div>
+            <div class="plan-compra">
+                <div class="plan-precio">S/ 9 <small>pago único</small></div>
                 <a href="https://tukuacademic.streamlit.app" class="boton">Comprar</a>
             </div>
         </div>
@@ -185,35 +276,142 @@
             </div>
         </div>
 
-        <div class="info-tienda">
+        <!-- INFO TIENDA -->
+        <div class="info-tienda" id="contacto">
             <h3>📋 Información de la Tienda</h3>
             <p><strong>Nombre comercial:</strong> TukuAcademic</p>
-            <p><strong>Razón social:</strong> SIMON APOLINARIO, FRANK LEONARDO</p>
+            <p><strong>Razón social:</strong> SIMON APOLINARIO FRANK LEONARDO</p>
             <p><strong>RUC:</strong> 10726934351</p>
-            <p><strong>Domicilio fiscal:</strong> JR. DARIO LEON 330 URB.LA OROYA ANTIGUA, Perú</p>
+            <p><strong>Domicilio fiscal:</strong> [TU DIRECCIÓN FISCAL], Perú</p>
             <p><strong>Correo de contacto:</strong> tukuacademic@gmail.com</p>
-            <p><strong>Teléfono / WhatsApp:</strong> 932480313</p>
+            <p><strong>Teléfono / WhatsApp:</strong> 932 480 313</p>
             <p><strong>Horario de atención:</strong> Lunes a domingo, 8:00 am - 10:00 pm</p>
+
+            <h3 style="margin-top: 24px;">🌐 Redes Sociales</h3>
+            <div class="redes-sociales">
+                <a href="https://instagram.com/tukuacademic" target="_blank" class="ig">
+                    📷 Instagram: @tukuacademic
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61595449433538" target="_blank" class="fb">
+                    📘 Facebook: TukuAcademic
+                </a>
+                <a href="https://tiktok.com/@tukuacademic" target="_blank" class="tt">
+                    🎵 TikTok: @tukuacademic
+                </a>
+            </div>
         </div>
 
-        <div class="legal">
+        <!-- POLÍTICA DE CAMBIOS Y DEVOLUCIONES -->
+        <div class="legal" id="devoluciones">
+            <h3>🔄 Política de Cambios y Devoluciones</h3>
+            <p><strong>1. Naturaleza del servicio:</strong> TukuAcademic ofrece servicios digitales de acceso inmediato (cursos, simulacros, planes de preparación). Al ser productos digitales de consumo inmediato, aplican condiciones específicas de devolución.</p>
+            <p><strong>2. Plazo de solicitud:</strong> El usuario puede solicitar el reembolso dentro de las **primeras 24 horas** posteriores a la compra, siempre que **no haya consumido más del 20% del contenido** adquirido (ej: no más de 1 simulacro si compró un ticket de 3).</p>
+            <p><strong>3. Causales válidas de devolución:</strong></p>
+            <p>• Cobro duplicado o erróneo.</p>
+            <p>• Falla técnica comprobada de la plataforma que impida el uso del servicio.</p>
+            <p>• Producto no entregado tras 48 horas de la compra.</p>
+            <p><strong>4. Causales NO válidas:</strong></p>
+            <p>• Cambio de opinión tras haber consumido más del 20% del contenido.</p>
+            <p>• No haber usado el servicio en el tiempo de vigencia del plan.</p>
+            <p>• Resultados obtenidos en exámenes (la plataforma es una herramienta de preparación y no garantiza resultados).</p>
+            <p><strong>5. Proceso de solicitud:</strong> Envía un correo a <strong>tukuacademic@gmail.com</strong> con el asunto "Solicitud de devolución" incluyendo: nombre completo, DNI, correo de registro, fecha de compra y motivo. Responderemos en un plazo máximo de **7 días hábiles**.</p>
+            <p><strong>6. Reembolso:</strong> Los reembolsos aprobados se realizan por el mismo medio de pago utilizado, en un plazo de **7 a 15 días hábiles** luego de la aprobación.</p>
+            <p><strong>7. Cambios de plan:</strong> Puedes solicitar el cambio de un plan por otro de igual o mayor valor, pagando la diferencia. El cambio se procesa dentro de los **7 días** posteriores a la compra.</p>
+        </div>
+
+        <!-- LIBRO DE RECLAMACIONES -->
+        <div class="libro-reclamaciones" id="libro">
+            <h3>📕 Libro de Reclamaciones Virtual</h3>
+            <p class="sub">Conforme al Código de Protección y Defensa del Consumidor (Ley N° 29571) y al Reglamento del Libro de Reclamaciones (D.S. N° 011-2011-PCM).</p>
+
+            <form id="form-reclamacion" onsubmit="enviarReclamacion(event)">
+                <div class="form-group">
+                    <label>Nombre completo del consumidor *</label>
+                    <input type="text" id="rec_nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>DNI / Carné de Extranjería *</label>
+                    <input type="text" id="rec_dni" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico *</label>
+                    <input type="email" id="rec_email" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono *</label>
+                    <input type="tel" id="rec_tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Dirección *</label>
+                    <input type="text" id="rec_dir" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de bien contratado *</label>
+                    <select id="rec_tipo" required>
+                        <option value="">Selecciona...</option>
+                        <option value="Ticket Simulacro">Ticket Simulacro</option>
+                        <option value="Pack x2 Tickets">Pack x2 Tickets</option>
+                        <option value="Pase Rápido">Pase Rápido</option>
+                        <option value="Pase Intensivo">Pase Intensivo</option>
+                        <option value="Pase Élite">Pase Élite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Monto reclamado (S/)</label>
+                    <input type="number" id="rec_monto" step="0.01" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Detalle de la reclamación *</label>
+                    <textarea id="rec_detalle" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Pedido del consumidor *</label>
+                    <textarea id="rec_pedido" required></textarea>
+                </div>
+                <button type="submit" class="boton" style="width:100%;">📩 Enviar Reclamación</button>
+            </form>
+
+            <div id="resultado-reclamacion" style="display:none; margin-top: 24px; padding: 20px; background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 8px;">
+                <h4 style="color: #065f46; margin-bottom: 12px;">✅ ¡Reclamación registrada!</h4>
+                <p style="font-size: 14px; margin-bottom: 12px;">Guarda este código para hacer seguimiento:</p>
+                <p id="codigo-rec" style="font-size: 20px; font-weight: 800; color: #065f46; letter-spacing: 2px;"></p>
+                <p style="font-size: 13px; color: #64748b; margin-top: 12px;">
+                    Recibirás una respuesta en un plazo máximo de 30 días calendario al correo proporcionado.
+                </p>
+            </div>
+        </div>
+
+        <!-- TÉRMINOS Y CONDICIONES -->
+        <div class="legal" id="legal">
             <h3>⚖️ Términos y Condiciones</h3>
             <p><strong>1. Aceptación:</strong> Al adquirir cualquier plan de TukuAcademic, el usuario acepta los presentes términos y condiciones.</p>
             <p><strong>2. Naturaleza del servicio:</strong> TukuAcademic es una plataforma digital de simulacros y preparación para exámenes nacionales y profesionales. El acceso es personal e intransferible.</p>
             <p><strong>3. Pagos:</strong> Los pagos se procesan mediante pasarelas de pago autorizadas (Yape, Plin, tarjetas). Los precios están expresados en soles peruanos (S/) e incluyen IGV cuando corresponda.</p>
-            <p><strong>4. Política de reembolsos:</strong> No se realizan reembolsos después de activar el plan. Si tienes problemas con tu compra, contáctanos dentro de las primeras 24 horas.</p>
+            <p><strong>4. Política de reembolsos:</strong> Ver sección "Política de Cambios y Devoluciones" arriba.</p>
             <p><strong>5. Uso del contenido:</strong> Todo el contenido de la plataforma (preguntas, explicaciones, material de estudio) es propiedad de TukuAcademic y está protegido por derechos de autor. Queda prohibida su reproducción o reventa.</p>
-            <p><strong>6. Protección de datos:</strong> Los datos personales de los usuarios son tratados con confidencialidad y no son compartidos con terceros sin autorización.</p>
+            <p><strong>6. Protección de datos:</strong> Los datos personales de los usuarios son tratados con confidencialidad conforme a la Ley N° 29733 de Protección de Datos Personales y no son compartidos con terceros sin autorización.</p>
             <p><strong>7. Modificaciones:</strong> TukuAcademic se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados a través de la plataforma.</p>
-            <p><strong>8. Contacto:</strong> Para cualquier consulta, escríbenos a tukuacademic@gmail.com o al WhatsApp 932480313.</p>
+            <p><strong>8. Contacto:</strong> Para cualquier consulta, escríbenos a tukuacademic@gmail.com o al WhatsApp 932 480 313.</p>
         </div>
 
     </div>
 
     <footer>
         <p>© 2026 TukuAcademic · Todos los derechos reservados</p>
+        <p>RUC: 10726934351 · tukuacademic@gmail.com · WhatsApp 932 480 313</p>
         <p>Plataforma de simulacros para exámenes profesionales en Perú</p>
     </footer>
+
+    <script>
+        function enviarReclamacion(e) {
+            e.preventDefault();
+            const codigo = 'TUKU-' + Date.now().toString().slice(-8);
+            document.getElementById('codigo-rec').textContent = codigo;
+            document.getElementById('resultado-reclamacion').style.display = 'block';
+            document.getElementById('form-reclamacion').style.display = 'none';
+            window.scrollTo({ top: document.getElementById('resultado-reclamacion').offsetTop - 100, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
